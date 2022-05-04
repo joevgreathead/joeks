@@ -1,0 +1,13 @@
+<div class="col-md-3 col-sm-12 p-0">
+  <div class="card mx-auto mb-3">
+    <!--    <img src="..." class="card-img-top" alt="...">-->
+    <div class="card-body" id="card-joke-<%= joke.id %>">
+      <h5 class="card-title"><%= joke.display_title %></h5>
+      <p class="card-text mb-3"><%= joke.joke %></p>
+      <div style="display: flex; justify-content: space-between;">
+        <%= button_to "Show this joke", joke, method: :get, class: "btn btn-primary" %>
+        <%= button_to "Edit", edit_joke_path(joke), method: :get, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

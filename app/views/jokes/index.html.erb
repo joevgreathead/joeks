@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-12">
+    <p style="color: green"><%= notice %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to new_joke_path do %>
+      <button class="btn btn-primary">New Joke</button>
+    <% end %>
+  </div>
+</div>
+
+<div id="jokes" class="row">
+  <% @jokes.each do |joke| %>
+    <%= render joke %>
+  <% end %>
+</div>
+
+

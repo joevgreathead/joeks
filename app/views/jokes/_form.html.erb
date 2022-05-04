@@ -1,0 +1,28 @@
+<%= form_with(model: joke) do |form| %>
+  <% if joke.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(joke.errors.count, "error") %> prohibited this joke from being saved:</h2>
+
+      <ul>
+        <% joke.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Joke ##{joke.new_record? ? Joke.maximum(:id).next : joke.id}" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :joke, class: "form-label" %>
+    <%= form.text_area :joke, class: "form-control" %>
+    <div class="form-text">The joke must be funny.</div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
