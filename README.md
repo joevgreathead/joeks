@@ -1,24 +1,12 @@
-# README
+# Joeks
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails app made for the purpose of storing jokes I make up on the fly.
 
-Things you may want to cover:
+No joke! It's that simple.
 
-* Ruby version
+## Setup
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bundle install
+rails s
+```
