@@ -3,15 +3,17 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <%= link_to new_category_path do %>
-      <button class="btn btn-primary">New Category</button>
+      <button class="btn btn-sm btn-primary">New Category</button>
     <% end %>
   </div>
 </div>
 
 <div id="categories" class="row">
-  <% @categories.each do |category| %>
-    <%= link_to edit_category_path(category), class: "mb-3" do %>
-      <%= render category %>
+  <div class="col-md-12" style="display: flex; flex-wrap: wrap;">
+    <% @categories.each do |category| %>
+      <%= link_to edit_category_path(category), class: "mb-3" do %>
+        <%= render category %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

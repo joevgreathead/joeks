@@ -3,6 +3,6 @@
 <%= render @category %>
 
 <div class="button-bar">
-  <%= button_to "Edit this category", edit_category_path(@category), method: :get, class: "btn btn-primary" %>
-  <%= button_to "Discard this category", @category, method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
+  <%= button_to "Edit this category", edit_category_path(@category), method: :get, class: "btn btn-sm btn-primary" %>
+  <%= button_to "Discard this category", @category, method: :delete, class: "btn btn-sm btn-danger", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
 </div>

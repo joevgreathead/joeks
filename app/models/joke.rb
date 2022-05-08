@@ -8,4 +8,5 @@ class Joke < ApplicationRecord
   def display_title
     self.title.present? ? self.title : "Joke ##{self.id}"
   end
+
 end
