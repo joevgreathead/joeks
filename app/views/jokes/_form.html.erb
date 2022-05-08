@@ -13,7 +13,7 @@
 
   <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, class: "form-control", placeholder: "Joke ##{joke.new_record? ? Joke.maximum(:id).next : joke.id}" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Joke ##{joke.new_record? ? Joke.next_id : joke.id}" %>
   </div>
 
   <div class="mb-3">

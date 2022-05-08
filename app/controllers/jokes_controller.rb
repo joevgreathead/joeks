@@ -3,10 +3,12 @@ class JokesController < ApplicationController
 
   # GET /jokes or /jokes.json
   def index
-    if params[:categories]
-      @jokes = Joke.joins(:categories).where(categories: Category.where(id: params[:categories].split(",")))
+    if params[:category_ids]
+      @jokes = Joke.joins(:categories).where(categories: Category.where(id: params[:category_ids]))
+    elsif params[:uncategorized]
+      @jokes = Joke.includes(:categories).where(categories: { id: nil })
     else
-      @jokes = Joke.all.order(created_at: :desc)
+      @jokes = Joke.all.includes(:categories).order(created_at: :desc)
     end
   end
 

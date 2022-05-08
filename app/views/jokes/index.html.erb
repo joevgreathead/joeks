@@ -11,11 +11,11 @@
     <% end %>
   </div>
   <div class="col-md-10" style="display: flex; flex-wrap: wrap;">
-    <%= link_to jokes_path do %>
+    <%= link_to jokes_path(uncategorized: true) do %>
       <%= render "categories/category", category: Category.new(title: "Uncategorized", color: "#777") %>
     <% end %>
     <% Category.all.each do |category| %>
-      <%= link_to jokes_path(categories: category.id) do %>
+      <%= link_to jokes_path("category_ids[]" => category.id) do %>
         <%= render "categories/category", category: category %>
       <% end %>
     <% end %>

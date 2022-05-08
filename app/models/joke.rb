@@ -9,4 +9,8 @@ class Joke < ApplicationRecord
     self.title.present? ? self.title : "Joke ##{self.id}"
   end
 
+  def self.next_id
+    maximum(:id)&.next || 1
+  end
+
 end

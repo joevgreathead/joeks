@@ -16,9 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_08_021126) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "discarded_at"
     t.string "color"
-    t.index ["discarded_at"], name: "index_categories_on_discarded_at"
   end
 
   create_table "joke_categories", force: :cascade do |t|

@@ -1,8 +1,5 @@
 class Category < ApplicationRecord
-  include Discard::Model
-  default_scope -> { kept }
-
-  has_many :joke_categories
+  has_many :joke_categories, dependent: :destroy
   has_many :jokes, through: :joke_categories
 
   before_create :add_color
