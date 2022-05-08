@@ -35,6 +35,7 @@ Use the simple form to update your jokes by adding categories or tweaking the wo
 
 See the same info and make the same edits on mobile.
 
-![](docs/resources/mobile-full-list.png)
-
-![](docs/resources/mobile-form.png)
+<div style="display: flex;">
+  <img alt="" src="./docs/resources/mobile-full-list.png" style="width: 40%;"/>
+  <img alt="" src="./docs/resources/mobile-form.png" style="width: 40%;"/>
+</div>
