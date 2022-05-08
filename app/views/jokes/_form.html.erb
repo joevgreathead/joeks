@@ -22,6 +22,15 @@
     <div class="form-text">The joke must be funny.</div>
   </div>
 
+  <% Category.all.each do |category| %>
+    <div class="form-check form-check-inline mb-3">
+      <%= form.check_box "category-#{category.id}", { name: "joke[category_ids][]", class: "form-check-input", checked: joke.categories.any? { |c| c.id == category.id } }, category.id, nil %>
+      <%= form.label "category-#{category.id}", class: "form-check-label" do %>
+        <%= render "categories/category", category: category %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="mb-3">
     <%= form.submit class: "btn btn-primary" %>
   </div>

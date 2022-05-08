@@ -3,7 +3,11 @@ class JokesController < ApplicationController
 
   # GET /jokes or /jokes.json
   def index
-    @jokes = Joke.all.order(created_at: :desc)
+    if params[:categories]
+      @jokes = Joke.joins(:categories).where(categories: Category.where(id: params[:categories].split(",")))
+    else
+      @jokes = Joke.all.order(created_at: :desc)
+    end
   end
 
   # GET /jokes/1 or /jokes/1.json
@@ -65,6 +69,6 @@ class JokesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def joke_params
-      params.require(:joke).permit(:title, :joke)
+      params.require(:joke).permit(:title, :joke, category_ids: [])
     end
 end

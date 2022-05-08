@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_043710) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_08_021126) do
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "discarded_at"
+    t.string "color"
+    t.index ["discarded_at"], name: "index_categories_on_discarded_at"
+  end
+
+  create_table "joke_categories", force: :cascade do |t|
+    t.integer "joke_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jokes", force: :cascade do |t|
     t.string "title"
     t.text "joke"

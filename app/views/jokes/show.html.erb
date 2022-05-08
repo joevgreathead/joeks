@@ -8,6 +8,10 @@
   <%= @joke.joke %>
 </p>
 
+<% @joke.categories.each do |category| %>
+  <%= render "categories/category", category: category %>
+<% end %>
+
 <div class="button-bar">
   <%= button_to "Edit this joke", edit_joke_path(@joke), method: :get, class: "btn btn-primary" %>
   <%= button_to "Discard this joke", @joke, method: :delete, class: "btn btn-danger" %>

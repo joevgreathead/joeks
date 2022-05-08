@@ -5,9 +5,19 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-2 mb-3">
     <%= link_to new_joke_path do %>
       <button class="btn btn-primary">New Joke</button>
+    <% end %>
+  </div>
+  <div class="col-md-10" style="display: flex; flex-wrap: wrap;">
+    <%= link_to jokes_path do %>
+      <%= render "categories/category", category: Category.new(title: "Uncategorized", color: "#777") %>
+    <% end %>
+    <% Category.all.each do |category| %>
+      <%= link_to jokes_path(categories: category.id) do %>
+        <%= render "categories/category", category: category %>
+      <% end %>
     <% end %>
   </div>
 </div>
