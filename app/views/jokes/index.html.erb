@@ -15,9 +15,12 @@
       <%= render "categories/category", category: Category.new(title: "Uncategorized", color: "#777") %>
     <% end %>
     <% Category.all.each do |category| %>
-      <%= link_to jokes_path("category_ids[]" => category.id) do %>
-        <%= render "categories/category", category: category %>
-      <% end %>
+      <div id="<%= dom_id category %>" class="mb-3 me-3">
+        <%= link_to jokes_path("category_ids[]" => category.id), style: "text-decoration: none;" do %>
+          <%= render "categories/pill", category: category %>
+        <% end %>
+        <span><small>(<%= category.jokes.size %>)</small></span>
+      </div>
     <% end %>
   </div>
 </div>

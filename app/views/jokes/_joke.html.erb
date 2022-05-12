@@ -3,7 +3,7 @@
     <!--    <img src="..." class="card-img-top" alt="...">-->
     <div class="card-body" id="card-joke-<%= joke.id %>">
       <h5 class="card-title"><%= joke.display_title %></h5>
-      <p class="card-text mb-3"><%= joke.joke %></p>
+      <p class="card-text mb-3" style="white-space: pre-wrap; overflow-y: scroll;"><%= joke.joke %></p>
       <%= render 'categories/preview', categories: joke.categories %>
       <div style="display: flex; justify-content: space-between;">
         <%= button_to "Show this joke", joke, method: :get, class: "btn btn-sm btn-primary" %>
