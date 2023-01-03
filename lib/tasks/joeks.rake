@@ -36,7 +36,9 @@ CMD ["rails", "server", "-b", "0.0.0.0"]
       "-f",
       "Dockerfile",
       "-t",
-      "joevgreathead/joeks:v0.2",
+      "joevgreathead/joeks:v0.3",
+      "-t",
+      "joevgreathead/joeks:latest",
     ].join(" ")
 
     puts build_command
