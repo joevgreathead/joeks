@@ -11,7 +11,7 @@ jobs:
       - name: Clone Ruby Build
         run: git clone https://github.com/rbenv/ruby-build.git
       - name: Install Ruby Build
-        run: sudo ./ruby-build/install.sh
+        run: ./ruby-build/install.sh
       - name: List Ruby defs
         run: ruby-build --definitions
       - name: Install Ruby 3.1.2
