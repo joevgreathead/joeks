@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   Rails-Tests:
-    runs-on: ruby-3.1.2:docker://ruby:3.1.2
+    runs-on: ruby-3.1.2
     steps:
       - name: Check out code
         uses: actions/checkout@v3
