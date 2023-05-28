@@ -12,6 +12,10 @@ jobs:
           echo ${{ github.workspace }}
       - run: |
           ls ${{ github.workspace }}
+      - run: |
+          echo $PATH
+      - run: |
+          pwd
       - name: Install dependencies
         run: bundle install
       - name: Run tests
