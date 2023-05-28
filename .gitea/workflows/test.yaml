@@ -16,7 +16,12 @@ jobs:
           echo $PATH
       - run: |
           pwd
+      - run: |
+          which ruby
+      - run: |
+          which bundle
       - name: Install dependencies
-        run: bundle install
+        run: |
+          bundle install
       - name: Run tests
         run: bundle exec rails test
