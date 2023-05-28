@@ -4,16 +4,10 @@ on: [push, pull_request]
 
 jobs:
   Rails-Tests:
-    runs-on: ruby:3.1.2-slim
+    runs-on: ruby:3.1.2
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      # - name: Set up Ruby
-      #   uses: https://github.com/ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: 3.1.2
-      - name: Install bundler
-        run: gem install bundler
       - name: Install dependencies
         run: bundle install
       - name: Run tests
