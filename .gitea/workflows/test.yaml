@@ -4,10 +4,25 @@ on: [push, pull_request]
 
 jobs:
   Rails-Tests:
-    runs-on: ruby-3.1.2
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+      - name: Clone Ruby Build
+        run: git clone https://github.com/rbenv/ruby-build.git
+      - name: Install Ruby Build
+        run: sudo ./ruby-build/install.sh
+      - name: List Ruby defs
+        run: ruby-build --definitions
+      - name: Install Ruby 3.1.2
+        run: ruby-build 3.1.2 /opt/hostedtoolcache/Ruby/3.1.2/x64
+      - name: Mark as complete for Ruby setup
+        run: touch /opt/hostedtoolcache/Ruby/3.1.2/x64.complete
+      - name: Set up Ruby
+        uses: https://github.com/ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          self-hosted: true
       - name: Install dependencies
         run: bundle install
       - name: Run tests
