@@ -3,18 +3,18 @@ run-name: ${{ gitea.actor }} is running Rails Tests
 on: [push, pull_request]
 
 jobs:
-Rails-Tests:
-  runs-on: ruby-3.1.2
-  steps:
-    - name: Check out code
-      uses: https://github.com/actions/checkout@v3
-    - name: Set up Ruby
-      uses: https://github.com/ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.1.2
-        self-hosted: true
-        # bundler-cache: true
-    - name: Install dependencies
-      run: bundle install
-    - name: Run tests
-      run: bundle exec rails test
+  Rails-Tests:
+    runs-on: ruby-3.1.2
+    steps:
+      - name: Check out code
+        uses: https://github.com/actions/checkout@v3
+      - name: Set up Ruby
+        uses: https://github.com/ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          self-hosted: true
+          # bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
+      - name: Run tests
+        run: bundle exec rails test
