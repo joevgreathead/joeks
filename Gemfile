@@ -13,7 +13,7 @@ gem "stimulus-rails"
 gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
 gem "discard", "~> 1.2"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby x86_64-linux ]
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem "jbuilder"
