@@ -6,6 +6,8 @@ jobs:
   Rails-Tests:
     runs-on: ruby-3.1.2
     steps:
+      - name: Check path in image
+        run: echo $PATH
       - name: Check out code
         uses: https://github.com/actions/checkout@v3
       - name: Set up Ruby
