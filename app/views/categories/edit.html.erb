@@ -1,5 +1,5 @@
-<h1>Editing category</h1>
+<p class="text-2xl mt-4">Editing category</p>
 
 <%= render "form", category: @category %>
 
-<%= button_to "Discard this category", @category, method: :delete, class: "btn btn-sm btn-danger", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
+<%= button_to "Discard this category", @category, method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'btn-danger mt-4'  %>

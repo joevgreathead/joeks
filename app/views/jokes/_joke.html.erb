@@ -1,14 +1,13 @@
-<div class="col-md-3 col-sm-12 p-0">
-  <div class="card mx-auto mb-3">
-    <!--    <img src="..." class="card-img-top" alt="...">-->
-    <div class="card-body" id="card-joke-<%= joke.id %>">
-      <h5 class="card-title"><%= joke.display_title %></h5>
-      <p class="card-text mb-3" style="white-space: pre-wrap; overflow-y: scroll;"><%= joke.joke %></p>
-      <%= render 'categories/preview', categories: joke.categories %>
-      <div style="display: flex; justify-content: space-between;">
-        <%= button_to "Show this joke", joke, method: :get, class: "btn btn-sm btn-primary" %>
-        <%= button_to "Edit", edit_joke_path(joke), method: :get, class: "btn btn-sm btn-primary" %>
-      </div>
+<div id="card-joke-<%= joke.id %>" class="border-solid border-slate-300 border-[1px] p-4 rounded-md lg:w-[25%] md:w-[48%] w-full flex flex-col justify-between">
+  <div>
+    <p class="text-xl"><%= joke.display_title %></p>
+    <p class="whitespace-pre-wrap overflow-y-scroll overflow-hidden break-words mt-2 max-h-36"><%= joke.joke %></p>
+  </div>
+  <div>
+    <%= render 'categories/preview', categories: joke.categories %>
+    <div class="flex justify-between mt-4">
+      <%= button_to "Show this joke", joke, method: :get, class: "btn-primary" %>
+      <%= button_to "Edit", edit_joke_path(joke), method: :get, class: "btn-primary" %>
     </div>
   </div>
 </div>

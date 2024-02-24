@@ -1,22 +1,18 @@
-<div class="row">
-  <div class="col-md-12">
-    <p style="color: green"><%= notice %></p>
-  </div>
-</div>
+<%= render(partial: 'shared/notice', locals: { notice: }) %>
 
-<div class="row">
-  <div class="col-md-2 mb-3">
+<div class="mt-4 flex gap-8">
+  <div>
     <%= link_to new_joke_path do %>
-      <button class="btn btn-sm btn-primary">New Joke</button>
+      <button class="btn-primary">New Joke</button>
     <% end %>
   </div>
-  <div class="col-md-10" style="display: flex; flex-wrap: wrap;">
+  <div class="flex flex-wrap gap-4">
     <%= link_to jokes_path(uncategorized: true) do %>
       <%= render "categories/category", category: Category.new(title: "Uncategorized", color: "#777") %>
     <% end %>
     <% Category.all.each do |category| %>
-      <div id="<%= dom_id category %>" class="mb-3 me-3">
-        <%= link_to jokes_path("category_ids[]" => category.id), style: "text-decoration: none;" do %>
+      <div id="<%= dom_id category %>">
+        <%= link_to jokes_path("category_ids[]" => category.id) do %>
           <%= render "categories/pill", category: category %>
         <% end %>
         <span><small>(<%= category.jokes.size %>)</small></span>
@@ -25,10 +21,8 @@
   </div>
 </div>
 
-<div id="jokes" class="row">
+<div id="jokes" class="mt-4 flex flex-wrap gap-4">
   <% @jokes.each do |joke| %>
     <%= render joke %>
   <% end %>
 </div>
-
-

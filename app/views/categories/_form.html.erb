@@ -1,36 +1,25 @@
 <%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+  <%= render(partial: 'shared/errors', locals: { object: category }) %>
 
-      <ul>
-        <% category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="mb-3">
-    <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, class: "form-control" %>
+  <div class="form-field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :description, class: "form-label" %>
-    <%= form.text_field :description, class: "form-control" %>
+  <div class="form-field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :color, class: "form-label" %>
-    <%= form.text_field :color, class: "form-control" %>
+  <div class="form-field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+    <p class="text-xs text-slate-700">Refresh to get a different color or enter your own value</p>
   </div>
 
-  <div class="mb-3">
-    <div id="color-block" style="height: 2rem; width: 2rem; background-color: <%= category.color %>"></div>
-  </div>
+  <div id="color-block" class="h-8 w-8 mt-4" style="background-color: <%= category.color %>"></div>
 
-  <div class="mb-3">
-    <%= form.submit class: "btn btn-sm btn-primary" %>
+  <div class="mt-4">
+    <%= form.submit class: "btn-primary" %>
   </div>
 <% end %>

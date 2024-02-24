@@ -1,19 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<%= render(partial: 'shared/notice', locals: { notice: }) %>
 
-<div class="row mb-3">
-  <div class="col-md-12">
-    <%= link_to new_category_path do %>
-      <button class="btn btn-sm btn-primary">New Category</button>
-    <% end %>
-  </div>
+<div class="mt-4">
+  <%= link_to new_category_path do %>
+    <button class="btn-primary">New Category</button>
+  <% end %>
 </div>
 
-<div id="categories" class="row">
-  <div class="col-md-12" style="display: flex; flex-wrap: wrap;">
-    <% @categories.each do |category| %>
-      <%= link_to edit_category_path(category), class: "mb-3" do %>
-        <%= render category %>
-      <% end %>
+<div id="categories" class="flex flex-wrap gap-4 mt-4">
+  <% @categories.each do |category| %>
+    <%= link_to edit_category_path(category) do %>
+      <%= render category %>
     <% end %>
-  </div>
+  <% end %>
 </div>

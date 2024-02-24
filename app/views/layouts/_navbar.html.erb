@@ -1,16 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-md">
-    <a class="navbar-brand" href="<%= root_path %>">Joeks</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link <%= current_page?(jokes_path) || current_page?(root_path) ? 'active' : nil %>" href="<%= jokes_path %>">Jokes</a>
+<nav class="py-2 bg-slate-200">
+  <div class="flex gap-2 lg:w-[960px] w-full mx-auto my-0">
+    <a href="<%= root_path %>" class="text-xl px-2 pb-2 pt-1">Joeks</a>
+    <div id="navbarSupportedContent">
+      <ul class="flex gap-2">
+        <li>
+          <a class="p-2 block hover:text-black <%= current_page?(jokes_path) || current_page?(root_path) ? 'text-black' : 'text-slate-600' %>" href="<%= jokes_path %>">Jokes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link <%= current_page?(categories_path) ? 'active' : nil %>" href="<%= categories_path %>">Categories</a>
+        <li>
+          <a class="p-2 block hover:text-black <%= current_page?(categories_path) ? 'text-black' : 'text-slate-600' %>" href="<%= categories_path %>">Categories</a>
         </li>
       </ul>
     </div>
