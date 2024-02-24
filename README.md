@@ -1,8 +1,8 @@
 # Joeks
 
-This is a simple Rails app I made for my self-serving purpose of saving jokes I make up on the fly.
+This is a simple Rails app I made for my purpose of saving jokes I make up on the fly or hear and want to remember.
 
-No joke! That's all it is.
+No joke!
 
 ## Setup
 
@@ -14,28 +14,5 @@ rails s
 ## Tech
 
 - Rails 7
-- Bootstrap
+- Tailwind CSS
 - [Discard](https://github.com/jhawthorn/discard)
-
-## Preview
-
-The app is simple, mobile optimized, and includes a few basic features.
-
-See all your jokes in a long, flexible display.
-
-![](docs/resources/desktop-full-list.png)
-
-Click on any categories you've created to filter down to jokes with that category.
-
-![](docs/resources/desktop-filtered.png)
-
-Use the simple form to update your jokes by adding categories or tweaking the wording.
-
-![](docs/resources/desktop-form.png)
-
-See the same info and make the same edits on mobile.
-
-<div style="display: flex;">
-  <img alt="" src="./docs/resources/mobile-full-list.png" style="width: 40%;"/>
-  <img alt="" src="./docs/resources/mobile-form.png" style="width: 40%;"/>
-</div>
