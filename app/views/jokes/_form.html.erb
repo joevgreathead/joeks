@@ -1,37 +1,29 @@
 <%= form_with(model: joke) do |form| %>
-  <% if joke.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(joke.errors.count, "error") %> prohibited this joke from being saved:</h2>
+  <%= render(partial: 'shared/errors', locals: { object: joke }) %>
 
-      <ul>
-        <% joke.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+  <div class="form-field">
+    <%= form.label :title %>
+    <%= form.text_field :title, placeholder: "Joke ##{joke.new_record? ? Joke.next_id : joke.id}" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :joke %>
+    <%= form.text_area :joke %>
+    <p class="text-xs text-slate-700">The joke must be funny.</p>
+  </div>
+
+  <div class="flex flex-wrap gap-4 mt-4">
+    <% Category.all.each do |category| %>
+      <div>
+        <%= form.check_box "category-#{category.id}", { name: "joke[category_ids][]", checked: joke.categories.any? { |c| c.id == category.id } }, category.id, nil %>
+        <%= form.label "category-#{category.id}", class: 'inline-block' do %>
+          <%= render "categories/category", category: category %>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="mb-3">
-    <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, class: "form-control", placeholder: "Joke ##{joke.new_record? ? Joke.next_id : joke.id}" %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :joke, class: "form-label" %>
-    <%= form.text_area :joke, class: "form-control" %>
-    <div class="form-text">The joke must be funny.</div>
-  </div>
-
-  <% Category.all.each do |category| %>
-    <div class="form-check form-check-inline mb-3">
-      <%= form.check_box "category-#{category.id}", { name: "joke[category_ids][]", class: "form-check-input", checked: joke.categories.any? { |c| c.id == category.id } }, category.id, nil %>
-      <%= form.label "category-#{category.id}", class: "form-check-label" do %>
-        <%= render "categories/category", category: category %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <div class="mb-3">
-    <%= form.submit class: "btn btn-sm btn-primary" %>
+  <div class="mt-4">
+    <%= form.submit class: "btn-primary" %>
   </div>
 <% end %>

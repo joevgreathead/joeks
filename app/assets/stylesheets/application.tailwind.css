@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+  @apply bg-blue-600 text-white rounded-sm px-2 py-1 cursor-pointer text-nowrap text-sm;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white rounded-sm px-2 py-1 cursor-pointer text-nowrap text-sm;
+}
+
+.form-field {
+  @apply flex flex-col gap-2 mt-2;
+}
+
+.form-field input,
+.form-field textarea {
+  @apply rounded-md py-1 border-slate-300;
+}
+
+.form-field .field_with_errors input,
+.form-field .field_with_errors textarea {
+  @apply w-full border-red-600;
+}
+
+input[type="checkbox"] {
+  @apply rounded-md border-slate-300;
+}

@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+  <div class="bg-red-600 text-white p-4 rounded-md mt-4">
+    <p><%= pluralize(object.errors.count, "error") %> prohibited this from being saved:</p>
+
+    <ul class="list-disc list-inside">
+      <% object.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

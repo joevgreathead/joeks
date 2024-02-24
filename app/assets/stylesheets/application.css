@@ -11,10 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "bootstrap";
 
 * {
   scrollbar-gutter: stable;
+  box-sizing: border-box;
 }
 
 .card {

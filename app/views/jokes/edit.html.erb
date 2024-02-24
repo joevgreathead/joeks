@@ -1,5 +1,5 @@
-<h3 class="mt-3">Update joke to be funnier</h3>
+<p class="text-2xl mt-4">Update joke to be funnier</p>
 
 <%= render "form", joke: @joke %>
 
-<%= button_to "Discard this joke", @joke, method: :delete, class: "btn btn-sm btn-danger", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
+<%= button_to "Discard this joke", @joke, method: :delete, class: "btn-danger mt-4", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
