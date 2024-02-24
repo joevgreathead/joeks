@@ -36,7 +36,7 @@ CMD ["rails", "server", "-b", "0.0.0.0"]
       "-f",
       "Dockerfile",
       "-t",
-      "joevgreathead/joeks:v0.3",
+      "joevgreathead/joeks:v0.5",
       "-t",
       "joevgreathead/joeks:latest",
     ].join(" ")

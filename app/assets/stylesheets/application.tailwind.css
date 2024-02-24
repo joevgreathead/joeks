@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .btn-primary {
-  @apply bg-blue-600 text-white rounded-sm px-2 py-1 cursor-pointer text-nowrap text-sm;
+  @apply bg-blue-600 text-white rounded-sm px-2 py-1 cursor-pointer whitespace-nowrap text-sm;
 }
 
 .btn-danger {
-  @apply bg-red-600 text-white rounded-sm px-2 py-1 cursor-pointer text-nowrap text-sm;
+  @apply bg-red-600 text-white rounded-sm px-2 py-1 cursor-pointer whitespace-nowrap text-sm;
 }
 
 .form-field {
